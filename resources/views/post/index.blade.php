@@ -3,6 +3,10 @@
 @section('title', 'Index Post')
 
 @section('content')
+
+    <h2>Posts</h2>
+    <br>
+
     <table class="table">
         <thead class="thead-dark">
         <tr>

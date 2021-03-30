@@ -3,6 +3,10 @@
 @section('title', 'Index Author')
 
 @section('content')
+
+    <h2>Authors</h2>
+    <br>
+
     <table class="table">
         <thead class="thead-dark">
         <tr>
