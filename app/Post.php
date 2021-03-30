@@ -8,11 +8,18 @@ class Post extends Model
 {
     protected $fillable = ['title', 'body', 'author_id'];
 
-    public function author() {
+    public function author()
+    {
         return $this->belongsTo('App\Author'); // o Author::class
     }
 
-    public function comment() {
+    public function comment()
+    {
         return $this->hasMany('App\Comment');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
     }
 }
