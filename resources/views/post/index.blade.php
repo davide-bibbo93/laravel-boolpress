@@ -31,7 +31,9 @@
                         @endforeach
                     </td>
                     <td>
-                        <img src="{{ asset($post->image) }}" width="200px">
+                        @if (!empty($post->image))
+                            <img src="{{ asset($post->image) }}" width="150px">
+                        @endif
                     </td>
                 </tr>
             @endforeach
