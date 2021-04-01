@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
 use App\Tag;
+use App\Mail\PostCreated;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -55,6 +57,9 @@ class PostController extends Controller
         $post->save();
 
         $post->tags()->attach($data['tags']); // questo è un array di tag
+
+        // abbiamo costruito il PostCreated con argomento post, il quale ha una dipendenza nel __construct del PostCreated
+        Mail::to('davideb@gmail.com')->send(new PostCreated($post));
 
         return redirect()->route('posts.index');
     }
