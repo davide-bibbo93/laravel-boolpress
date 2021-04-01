@@ -7,7 +7,7 @@
     <h2>Create Post</h2>
     <br>
 
-    <form action="{{ route('posts.store') }}" method="post">
+    <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group">
@@ -25,6 +25,10 @@
         <div class="form-group">
           <label for="body">Body</label>
           <textarea class="form-control" name="body" id="body" rows="6" placeholder="Body Text"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" name="image" id="image">
         </div>
         <div class="form-group">
             <label for="tags[]">Tags</label>

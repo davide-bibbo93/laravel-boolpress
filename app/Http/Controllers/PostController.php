@@ -43,6 +43,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // image è il nome dell'input
+        $path = $request->file('image')->store('public');
 
         // per fare un check manuale
         // prendo l'author_id, lo cerco con una query (con il find)
@@ -54,6 +56,7 @@ class PostController extends Controller
 
         $post = new Post();
         $post->fill($data);
+        $post->image = $path;
         $post->save();
 
         $post->tags()->attach($data['tags']); // questo è un array di tag

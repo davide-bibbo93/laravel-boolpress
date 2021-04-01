@@ -15,6 +15,7 @@
             <th scope="col">Body</th>
             <th scope="col">Author</th>
             <th scope="col">Tags</th>
+            <th scope="col">Image</th>
         </tr>
         </thead>
         <tbody>
@@ -29,11 +30,11 @@
                             {{$tag->name}}
                         @endforeach
                     </td>
-
+                    <td>
+                        <img src="{{ asset($post->image) }}" width="200px">
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endsection
-
-
